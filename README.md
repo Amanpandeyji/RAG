@@ -1,8 +1,8 @@
-# 🎓 DSA Learning Assistant with RAG
+#  DSA Learning Assistant with RAG
 
 A beginner-friendly Data Structures and Algorithms (DSA) assistant built using Retrieval-Augmented Generation (RAG) with Groq API.
 
-## ✨ Features
+##  Features
 
 - **RAG-Powered**: Uses retrieval-augmented generation to answer questions based only on provided DSA notes
 - **Beginner-Friendly**: Explains concepts in simple, easy-to-understand language
@@ -10,7 +10,7 @@ A beginner-friendly Data Structures and Algorithms (DSA) assistant built using R
 - **Fast Responses**: Powered by Groq's ultra-fast LLM inference
 - **Interactive Mode**: Chat-based interface for learning
 
-## 🏗️ Architecture
+##  Architecture
 
 ```
 User Question → Embedding → Vector Search → Retrieve Context → Groq LLM → Answer
@@ -23,12 +23,12 @@ User Question → Embedding → Vector Search → Retrieve Context → Groq LLM 
 5. **Retrieval**: Finds most relevant chunks for user question
 6. **Generation**: Groq LLM generates answer using retrieved context
 
-## 📋 Prerequisites
+##  Prerequisites
 
 - Python 3.8 or higher
-- Groq API key ([Get it here](https://console.groq.com/keys))
+- Groq API key
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### Local Setup
 
@@ -71,7 +71,7 @@ Or use the command-line interface:
 python dsa_assistant.py
 ```
 
-## 📖 Usage
+## Usage
 
 ### Interactive Mode (Recommended)
 
@@ -110,7 +110,7 @@ answer = assistant.ask("What is a linked list?")
 print(answer)
 ```
 
-## 📚 DSA Notes
+## DSA Notes
 
 The assistant uses `dsa_notes.txt` which contains beginner-friendly explanations of:
 
@@ -123,7 +123,7 @@ The assistant uses `dsa_notes.txt` which contains beginner-friendly explanations
 - **Recursion**: Base cases, recursive cases, examples
 - **Trees**: Binary trees, BST, traversals
 
-## 🔧 Customization
+##  Customization
 
 ### Add More Notes
 
@@ -161,7 +161,7 @@ retriever=self.vectorstore.as_retriever(
 )
 ```
 
-## 🎯 How It Works
+##  How It Works
 
 ### 1. Document Processing
 ```
@@ -183,25 +183,25 @@ User Query → Embedding → Similarity Search → Top 3 Relevant Chunks
 Retrieved Context + User Query + Prompt Template → Groq LLM → Answer
 ```
 
-## 🛡️ Rules Enforced
+##  Rules Enforced
 
 The assistant follows strict rules:
 
-1. ✅ Uses ONLY the provided context
-2. ✅ Explains in simple, beginner-friendly language
-3. ✅ Says "not available" if answer isn't in notes
-4. ✅ No assumptions about advanced knowledge
-5. ✅ No invented algorithms or shortcuts
-6. ✅ Follows examples from the context
+1.  Uses ONLY the provided context
+2.  Explains in simple, beginner-friendly language
+3.  Says "not available" if answer isn't in notes
+4.  No assumptions about advanced knowledge
+5.  No invented algorithms or shortcuts
+6.  Follows examples from the context
 
-## 📊 Example Output
+##  Example Output
 
 ```
-❓ Question: What is binary search?
+ Question: What is binary search?
 
-🔍 Searching through DSA notes...
+ Searching through DSA notes...
 
-💡 Answer:
+ Answer:
 Binary search is a searching algorithm that only works on SORTED arrays. 
 Think of it like finding a word in a dictionary - you open it in the middle 
 and decide which half to search.
@@ -220,7 +220,7 @@ Use binary search when: Your array is sorted
 📖 Retrieved 3 relevant sections from notes
 ```
 
-## 🐛 Troubleshooting
+##  Troubleshooting
 
 ### "GROQ_API_KEY not found"
 - Check that `.env` file exists in the same directory
@@ -238,8 +238,7 @@ Use binary search when: Your array is sorted
 - Run: `pip install -r requirements.txt`
 - Make sure you're using Python 3.8+
 
-## 📝 File Structure
-
+## File Structure
 ```
 RAG/
 ├── dsa_assistant.py      # Main assistant class
@@ -269,12 +268,12 @@ RAG/
 4. Add `GROQ_API_KEY` to secrets
 5. Deploy!
 
-**📖 Complete deployment guide**: See [DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md) for:
-- ☁️ Streamlit Cloud (recommended)
-- 🐳 Docker deployment
-- 🚂 Railway, Render, Heroku options
-- 🔒 Security best practices
-- 🔧 Troubleshooting tips
+** Complete deployment guide**: See [DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md) for:
+-  Streamlit Cloud (recommended)
+-  Docker deployment
+- Railway, Render, Heroku options
+- Security best practices
+- Troubleshooting tips
 
 ### Docker Deployment
 
@@ -289,21 +288,21 @@ docker run -p 8501:8501 -e GROQ_API_KEY=your_key dsa-assistant
 docker-compose up -d
 ```
 
-## 🔐 Security Note
+##  Security Note
 
-⚠️ **IMPORTANT**: Never commit your API keys!
+ **IMPORTANT**: Never commit your API keys!
 
-- ✅ Keep `.env` file private
-- ✅ Never hardcode API keys in code
-- ✅ Use `.env.example` as template
-- ✅ Add `.env` to `.gitignore`
-- ✅ Use environment variables in deployment
+-  Keep `.env` file private
+-  Never hardcode API keys in code
+-  Use `.env.example` as template
+-  Add `.env` to `.gitignore`
+-  Use environment variables in deployment
 
 ## 📄 License
 
 This project is for educational purposes.
 
-## 🤝 Contributing
+## Contributing
 
 To add more DSA topics:
 1. Edit `dsa_notes.txt`
@@ -311,8 +310,3 @@ To add more DSA topics:
 3. Include examples and time complexities
 4. Use beginner-friendly language
 
----
-
-**Happy Learning! 🚀**
-
-For questions or issues, feel free to modify the notes or code to suit your learning needs.
