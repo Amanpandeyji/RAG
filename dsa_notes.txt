@@ -1,0 +1,277 @@
+# Data Structures and Algorithms Notes
+
+## Arrays
+
+### What is an Array?
+An array is a collection of items stored at continuous memory locations. Think of it like a row of boxes, each box has a number (index) starting from 0.
+
+Example:
+arr = [5, 10, 15, 20, 25]
+Index: 0   1   2   3   4
+
+### Array Operations Time Complexity:
+- Access by index: O(1) - Very fast! You can directly go to any box.
+- Search: O(n) - You may need to check all boxes one by one.
+- Insert at end: O(1) - Just add to the last position.
+- Insert at beginning: O(n) - You need to shift all elements.
+
+### Common Array Problems:
+
+1. Find Maximum Element:
+   - Go through each element
+   - Keep track of the largest number seen so far
+   - Time: O(n), Space: O(1)
+
+2. Reverse an Array:
+   - Use two pointers: one at start, one at end
+   - Swap elements and move pointers towards center
+   - Time: O(n), Space: O(1)
+
+## Linked Lists
+
+### What is a Linked List?
+A linked list is like a treasure hunt. Each item (node) has:
+- Data (the treasure)
+- A pointer to the next item (the clue to next treasure)
+
+Unlike arrays, items are not stored together in memory.
+
+### Types of Linked Lists:
+1. Singly Linked List: Each node points to the next node only
+2. Doubly Linked List: Each node points to both next and previous nodes
+3. Circular Linked List: Last node points back to the first node
+
+### Linked List Operations Time Complexity:
+- Access: O(n) - You must walk through the chain
+- Search: O(n) - Check each node one by one
+- Insert at beginning: O(1) - Very fast! Just change one pointer
+- Insert at end: O(n) - Must walk to the end first
+- Delete: O(n) - Need to find the node first
+
+### Common Problems:
+
+1. Detect Cycle in Linked List:
+   - Use two pointers: slow (moves 1 step) and fast (moves 2 steps)
+   - If they meet, there's a cycle
+   - This is called Floyd's Cycle Detection or "Tortoise and Hare"
+
+2. Reverse a Linked List:
+   - Change the direction of all pointers
+   - Keep three pointers: previous, current, next
+   - Time: O(n), Space: O(1)
+
+## Stacks
+
+### What is a Stack?
+A stack is like a stack of plates. You can only:
+- Add a plate on top (PUSH)
+- Remove the top plate (POP)
+- Look at the top plate (PEEK)
+
+This is called LIFO: Last In, First Out
+
+### Stack Operations:
+- Push: O(1) - Add element to top
+- Pop: O(1) - Remove element from top  
+- Peek: O(1) - Look at top element
+- isEmpty: O(1) - Check if stack is empty
+
+### Common Stack Problems:
+
+1. Valid Parentheses:
+   - Use stack to match opening and closing brackets
+   - Push opening brackets, pop when you see closing
+   - If they match, continue; if not, invalid
+
+2. Next Greater Element:
+   - Use stack to keep track of elements waiting for a greater element
+   - Process array from right to left
+
+## Queues
+
+### What is a Queue?
+A queue is like a line at a movie theater. The person who comes first gets served first.
+- Add people at the back (ENQUEUE)
+- Remove from the front (DEQUEUE)
+
+This is called FIFO: First In, First Out
+
+### Queue Operations:
+- Enqueue: O(1) - Add to back
+- Dequeue: O(1) - Remove from front
+- Front: O(1) - Look at front element
+- isEmpty: O(1) - Check if queue is empty
+
+## Sorting Algorithms
+
+### 1. Bubble Sort
+The simplest sorting algorithm. Like bubbles rising to the surface, larger elements "bubble up" to the end.
+
+How it works:
+- Compare adjacent elements
+- Swap if they're in wrong order
+- Repeat until no swaps needed
+
+Time: O(n²) - Slow for large arrays
+Space: O(1)
+Best for: Small arrays or nearly sorted data
+
+### 2. Selection Sort
+Find the smallest element and put it at the beginning.
+
+How it works:
+- Find minimum element in unsorted part
+- Swap it with the first unsorted element
+- Move boundary of sorted part
+
+Time: O(n²)
+Space: O(1)
+
+### 3. Insertion Sort
+Like sorting playing cards in your hand. Pick one card and insert it in the right position.
+
+How it works:
+- Start with second element
+- Compare with elements before it
+- Shift larger elements right
+- Insert element in correct position
+
+Time: O(n²) worst case, O(n) best case
+Space: O(1)
+Best for: Small arrays or nearly sorted data
+
+### 4. Merge Sort
+Divide and conquer! Split array in half, sort each half, then merge them.
+
+How it works:
+- Divide array into two halves
+- Recursively sort each half
+- Merge the sorted halves
+
+Time: O(n log n) - Very good!
+Space: O(n) - Needs extra space
+Best for: Large arrays, stable sorting needed
+
+### 5. Quick Sort
+Pick a "pivot" element, put smaller elements before it, larger elements after it.
+
+How it works:
+- Choose a pivot element
+- Partition array around pivot
+- Recursively sort left and right parts
+
+Time: O(n log n) average, O(n²) worst case
+Space: O(log n)
+Best for: Large arrays, usually faster than merge sort
+
+## Searching Algorithms
+
+### 1. Linear Search
+Check each element one by one until you find what you're looking for.
+
+Time: O(n)
+Space: O(1)
+Use when: Array is unsorted or small
+
+### 2. Binary Search
+Only works on SORTED arrays. Like finding a word in a dictionary - open in the middle, decide which half to search.
+
+How it works:
+- Find middle element
+- If target is smaller, search left half
+- If target is larger, search right half
+- Repeat until found or no elements left
+
+Time: O(log n) - Very fast!
+Space: O(1) for iterative, O(log n) for recursive
+Use when: Array is sorted
+
+## Big O Notation
+
+Big O tells us how fast an algorithm is as the input grows.
+
+From fastest to slowest:
+1. O(1) - Constant: Same time regardless of input size
+   Example: Accessing array element by index
+
+2. O(log n) - Logarithmic: Grows slowly
+   Example: Binary search
+
+3. O(n) - Linear: Grows proportionally with input
+   Example: Linear search
+
+4. O(n log n) - Log-linear: 
+   Example: Merge sort, Quick sort (average)
+
+5. O(n²) - Quadratic: Grows very fast
+   Example: Bubble sort, nested loops
+
+6. O(2^n) - Exponential: Extremely slow
+   Example: Some recursive algorithms
+
+7. O(n!) - Factorial: Insanely slow
+   Example: Generating all permutations
+
+## Recursion
+
+### What is Recursion?
+A function that calls itself. Like looking at a mirror that shows another mirror.
+
+Every recursive function needs:
+1. Base case: When to stop
+2. Recursive case: Call itself with smaller problem
+
+### Example: Factorial
+factorial(5) = 5 × 4 × 3 × 2 × 1 = 120
+
+Recursive approach:
+- Base case: factorial(0) = 1
+- Recursive case: factorial(n) = n × factorial(n-1)
+
+### Common Recursion Problems:
+
+1. Fibonacci Numbers:
+   - F(0) = 0, F(1) = 1
+   - F(n) = F(n-1) + F(n-2)
+   - But this is slow: O(2^n)
+   - Better to use dynamic programming
+
+2. Tower of Hanoi:
+   - Move n disks from source to destination
+   - Use auxiliary rod as helper
+   - Only move one disk at a time
+   - Never put larger disk on smaller disk
+
+## Trees
+
+### Binary Tree
+A tree where each node has at most 2 children: left child and right child.
+
+Like a family tree, but each parent has maximum 2 children.
+
+### Binary Search Tree (BST)
+Special binary tree with a rule:
+- Left child < Parent
+- Right child > Parent
+
+This makes searching fast!
+
+### Tree Traversals:
+
+1. Inorder (Left, Root, Right):
+   - Gives sorted order for BST
+   
+2. Preorder (Root, Left, Right):
+   - Used to create copy of tree
+   
+3. Postorder (Left, Right, Root):
+   - Used to delete tree
+
+4. Level Order (BFS):
+   - Visit level by level
+   - Use queue
+
+### Time Complexity:
+- Search in BST: O(log n) average, O(n) worst case
+- Insert in BST: O(log n) average, O(n) worst case
+- Delete in BST: O(log n) average, O(n) worst case
